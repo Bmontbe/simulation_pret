@@ -1,0 +1,54 @@
+span {
+  color : white;
+  font-weight: bold;
+  font-size:20px;
+}
+
+.nomProjet {
+  color : white;
+  margin-bottom: 1.5rem;
+  padding-top:0.5rem;
+  text-align: center;
+  font-size:25px;
+  font-weight: bold;
+}
+
+.categorie {
+  display:flex;
+  justify-content: center;
+  font-size: 14px;
+}
+
+.title {
+  width: 60%;
+}
+
+.categorieTotal {
+  display:flex;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: bold;
+  border-top: solid 0.5px #282c34; 
+  margin-top:0.5rem;
+}
+
+.montant {
+  text-align : right;
+  width:40%;
+  font-size: 14px;
+}
+
+@media screen and (max-width: 1150px) {
+  .nomProjet{
+    font-size: 120%;
+    padding-top:0.5rem;
+  }
+
+  .title, .montant {
+    font-size: 14px;
+  }
+
+  span{
+    font-size:90%
+  }
+}

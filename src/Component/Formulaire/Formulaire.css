@@ -1,0 +1,148 @@
+.formulaireProjet{
+  padding: 2.5rem;
+  width: 40%;
+  background-color: #3a3c41;
+  border-radius: 5rem;
+}
+
+.formulaireBanque{
+  padding: 2.5rem;
+  width: 30%;
+  background-color: #455069;
+  border-radius: 5rem;
+}
+
+label {
+  color:white !important;
+  font-size:12px !important;
+}
+
+#form-subcomponent-shorthand-input-first-name{
+  font-size:12px;
+}
+
+.formulaireRecap{
+  display : flex;
+}
+
+.recapPret{
+  background-color: #c0a478;
+  padding: 2.5rem;
+  width: 30%;
+  display:flex;
+  flex-direction: column;
+  border-radius: 5rem;
+}
+
+.sectionFirst {
+  color: #282c34;
+  font-size: 16px;
+  text-align:center;
+  padding:0.5rem;
+  margin-bottom: 1rem;
+  background-color: white;
+  font-weight: bold;
+  border-radius: 5rem;
+}
+.section {
+  color: #282c34;
+  font-size: 16px;
+  text-align:center;
+  padding:0.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  background-color: white;
+  font-weight: bold;
+  border-radius: 5rem;
+}
+
+.block{
+  display:flex;
+  justify-content: space-between;
+}
+
+.revenus {
+  width: 60%;
+}
+
+.charges {
+  width: 30%;
+}
+
+.ui.form .fields {
+  align-items: flex-end !important;
+}
+
+.plusButton {
+  color: #ce8278;
+  font-size: 20px;
+  cursor: pointer;
+  text-align: right;
+  padding-left: 5px;
+}
+
+.options {
+display : flex;
+justify-content: flex-end;
+margin: 0.5%;
+
+}
+
+@media only screen and (min-width : 600px) and (max-width : 1024px) {
+ 
+  .formulaireRecap{
+    display : flex;
+    flex-wrap: wrap;
+  }
+  .formulaireProjet{
+    width: 65%;
+  }
+  
+  .formulaireBanque{
+    width: 35%;
+  }
+
+  .recapPret{
+    width: 100%;
+    display:flex;
+  }
+
+  .formulaire {
+    display : flex;
+    flex-wrap: wrap;
+  }
+
+  .ui.form [class*="equal width"].fields>.field {
+    flex: 1 1 auto;
+    width: 50%;
+ }
+  }
+
+@media screen and (max-width: 600px) {
+  .formulaireRecap, .block {
+    flex-direction: column !important;
+  }
+
+  .formulaireProjet, .formulaireBanque, .recapPret, .revenus, .charges {
+    width: 100%;
+  }
+
+  label {
+    font-size: 12px !important;
+  }
+
+  #form-subcomponent-shorthand-input-first-name{
+    font-size:11px !important;
+  }
+
+  .sectionFirst {
+    font-size: 14px;
+  }
+  .section {
+    font-size: 14px;
+  }
+
+  .caracteristiques {
+    margin-top: 0;
+  }
+}

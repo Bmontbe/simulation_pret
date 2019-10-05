@@ -1,24 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState, useEffect} from 'react';
 import './App.css';
+import Formulaire from './Component/Formulaire/Formulaire';
+import Charges from './Component/Charges/Charges';
+import NavigationBar from './Component/NavigationBar/NavigationBar';
 
 function App() {
+  const [view, setView] = useState('Formulaire')
+  const [newView, setNewView] = useState()
+
+useEffect(() => {
+  setNewView(view)
+}, [view])
+
+  const switchView = (view) => {
+    setView(view)
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <div>
+      <NavigationBar 
+      switchViewFormulaire = {() => switchView('Formulaire')}
+      switchViewCharges = {() => switchView('Charges')}
+      />
+      </div>
+      <div>
+      { newView && newView === 'Formulaire' && <Formulaire />}
+      { newView && newView === 'Charges' && <Charges />}
+      </div>
+      
     </div>
   );
 }

@@ -1,0 +1,84 @@
+.chargesForm {
+  display:flex;
+  justify-content: space-around;
+  width: 100%
+}
+
+.chargesFixes{
+  padding: 2.5rem;
+  width: 50%;
+  background-color: #7f8085;
+  border-radius: 5rem;
+}
+
+.chargesDivers{
+  padding: 2.5rem;
+  width: 50%;
+  background-color: #5e6880;
+  border-radius: 5rem;
+}
+
+.recapFrais {
+  display:flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.categorieFrais {
+  display:flex;
+  justify-content: space-around;
+  font-size: 14px;
+  width: 100%;
+  align-items: flex-end;
+}
+
+.titleFrais {
+  width: 40%;
+  font-weight: bold;
+  text-align:left;
+}
+
+.montantFrais {
+  text-align : left;
+  width:20%;
+  font-size: 14px;
+}
+
+.buttonForm {
+  width:5%;
+  color:white;
+}
+
+.buttonForm, ::before {
+box-sizing: inherit;
+}
+
+.buttonSave {
+  width:5%;
+  color:white;
+  font-size: 20px;
+}
+
+.totalCharges {
+  padding-top:2rem;
+  font-weight: bold;
+  display:flex;
+  width: 100%;
+  text-align:center;
+  justify-content: center;
+}
+
+@media screen and (max-width: 600px) {
+  .chargesForm {
+    flex-direction: column !important;
+  }
+  .chargesFixes {
+    width: 100%;
+  }
+
+  .chargesDivers {
+    width: 100%;
+  }
+}

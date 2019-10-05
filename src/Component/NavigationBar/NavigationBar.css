@@ -1,0 +1,23 @@
+.navigation > .container {
+  flex-direction: row;
+ }
+
+ #logo {
+   margin-left:20px;
+   width: 180px;
+   height: auto;
+ }
+
+ .linkNavBar {
+   color:black !important;
+ }
+
+ .navigation {
+   background-color: transparent;
+   z-index: 4;
+ }
+
+ .option {
+   padding-left:1rem;
+   cursor: pointer;
+ }
