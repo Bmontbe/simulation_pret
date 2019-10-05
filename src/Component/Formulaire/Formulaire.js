@@ -5,7 +5,7 @@ import Caracteristiques from '../Caracteristiques/Caracteristiques'
 import './Formulaire.css';
 import { pretInfos } from '../Utils/pret';
 
-function Formulaire() {
+function Formulaire(props) {
 
   const [projet, setProjet] = useState(pretInfos)
   const [projetLocalStorage, setProjetLocalStorage] = useState(pretInfos)
@@ -14,7 +14,7 @@ function Formulaire() {
     if (localStorage.getItem('projet')) {
       return setProjetLocalStorage(JSON.parse(localStorage.getItem('projet')));
     } return projet
-  }, [])
+  }, [props.newView])
 
   useEffect(() => {
     projet != {} && localStorage.setItem("projet", JSON.stringify(projet))

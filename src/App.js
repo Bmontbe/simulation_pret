@@ -25,8 +25,8 @@ useEffect(() => {
       />
       </div>
       <div>
-      { newView && newView === 'Formulaire' && <Formulaire />}
-      { newView && newView === 'Charges' && <Charges />}
+      { newView && newView === 'Formulaire' && <Formulaire view = {newView}/>}
+      { newView && newView === 'Charges' && <Charges view = {newView}/>}
       </div>
       
     </div>

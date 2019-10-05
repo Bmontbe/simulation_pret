@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Form} from 'semantic-ui-react';
 import './Charges.css';
 
-function Charges() {
+function Charges(props) {
 
   const [charges, setCharges] = useState({
     fraisFixes: []
@@ -26,7 +26,7 @@ function Charges() {
         } return setArrayFraisFixesLocalStorage(array)
       }
     } return arrayFraisFixes;
-  }, [])
+  }, [props.newView])
 
   useEffect(() => {
     if (localStorage.getItem('arrayFraisDivers')) {
@@ -38,7 +38,7 @@ function Charges() {
         } return setArrayFraisDiversLocalStorage(array)
       }
     } return arrayFraisDivers;
-  }, [])
+  }, [props.newView])
 
 
   useEffect(() => {
