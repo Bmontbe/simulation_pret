@@ -9,9 +9,11 @@ function Charges() {
   })
   const [fraisFixes, setFraisFixes] = useState({ nomFrais: "", montantFrais: "" })
   const [arrayFraisFixes, setArrayFraisFixes] = useState([])
+  const [arrayFraisFixesLocalStorage, setArrayFraisFixesLocalStorage] = useState([])
   const [inputModifFraisFixes, setInputModifFraisFixes] = useState({ nomFrais: "", montantFrais: "" })
   const [fraisDivers, setFraisDivers] = useState({ nomFrais: "", montantFrais: "" })
   const [arrayFraisDivers, setArrayFraisDivers] = useState([])
+   const [arrayFraisDiversLocalStorage, setArrayFraisDiversLocalStorage] = useState([])
   const [inputModifFraisDivers, setInputModifFraisDivers] = useState({ nomFrais: "", montantFrais: "" })
 
   useEffect(() => {
@@ -21,7 +23,7 @@ function Charges() {
       if (array.length > 0) {
         for (let i = 0; i <= array.length; i++) {
           array[0].edit = true
-        } return setArrayFraisFixes(array)
+        } return setArrayFraisFixesLocalStorage(array)
       }
     } return arrayFraisFixes;
   }, [])
@@ -33,7 +35,7 @@ function Charges() {
       if (array.length > 0) {
         for (let i = 0; i <= array.length; i++) {
           array[0].edit = true
-        } return setArrayFraisDivers(array)
+        } return setArrayFraisDiversLocalStorage(array)
       }
     } return arrayFraisDivers;
   }, [])
@@ -46,6 +48,14 @@ function Charges() {
   useEffect(() => {
     arrayFraisDivers != {} && localStorage.setItem("arrayFraisDivers", JSON.stringify(arrayFraisDivers))
   }, [arrayFraisDivers])
+
+  useEffect(() => {
+    setArrayFraisFixes(arrayFraisFixesLocalStorage)
+  }, [arrayFraisFixesLocalStorage])
+
+  useEffect(() => {
+    setArrayFraisDivers(arrayFraisDiversLocalStorage)
+  }, [arrayFraisDiversLocalStorage])
 
   const handleChange = value => event => {
     setFraisFixes({ ...fraisFixes, [value]: event.target.value, edit: true });

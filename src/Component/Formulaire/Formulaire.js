@@ -8,10 +8,11 @@ import { pretInfos } from '../Utils/pret';
 function Formulaire() {
 
   const [projet, setProjet] = useState(pretInfos)
+  const [projetLocalStorage, setProjetLocalStorage] = useState(pretInfos)
 
   useEffect(() => {
     if (localStorage.getItem('projet')) {
-      return setProjet(JSON.parse(localStorage.getItem('projet')));
+      return setProjetLocalStorage(JSON.parse(localStorage.getItem('projet')));
     } return projet
   }, [])
 
@@ -19,6 +20,10 @@ function Formulaire() {
     projet != {} && localStorage.setItem("projet", JSON.stringify(projet))
 
   }, [projet])
+
+  useEffect(() => {
+    setProjet(projetLocalStorage)
+  }, [projetLocalStorage])
 
   const supprimer = () => {
     setProjet(pretInfos)
