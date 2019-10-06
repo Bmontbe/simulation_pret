@@ -14,7 +14,7 @@ function Formulaire(props) {
     if (localStorage.getItem('projet')) {
       return setProjetLocalStorage(JSON.parse(localStorage.getItem('projet')));
     } return projetLocalStorage
-  }, [])
+  }, [props.view])
 
 
   useEffect(() => {
