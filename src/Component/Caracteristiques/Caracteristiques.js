@@ -7,17 +7,17 @@ function Caracteristiques(props) {
   const [arrayFraisFixes, setArrayFraisFixes] = useState([])
   const [arrayFraisDivers, setArrayFraisDivers] = useState([])
 
-  useEffect(() => {
-    if (localStorage.getItem('arrayFraisFixes')) {
-     return setArrayFraisFixes(JSON.parse(localStorage.getItem('arrayFraisFixes')))
-    } return arrayFraisFixes;
-  }, [props.view])
+  // useEffect(() => {
+  //   if (localStorage.getItem('arrayFraisFixes')) {
+  //    return setArrayFraisFixes(JSON.parse(localStorage.getItem('arrayFraisFixes')))
+  //   } return arrayFraisFixes;
+  // }, [props.view])
 
-  useEffect(() => {
-    if (localStorage.getItem('arrayFraisDivers')) {
-     return setArrayFraisDivers(JSON.parse(localStorage.getItem('arrayFraisDivers')))
-    } return arrayFraisDivers;
-  }, [props.view])
+  // useEffect(() => {
+  //   if (localStorage.getItem('arrayFraisDivers')) {
+  //    return setArrayFraisDivers(JSON.parse(localStorage.getItem('arrayFraisDivers')))
+  //   } return arrayFraisDivers;
+  // }, [props.view])
 
   const montantPret = (props.montantAcquisition + props.montantTravaux - props.apport - props.apportSup +
     props.fraisAgence + props.fraisNotaire + props.garantie + props.fraisDossier).toFixed(0)
@@ -59,16 +59,16 @@ function Caracteristiques(props) {
     } return 0
   }
 
-  const totalChargesFixes = () => {
-    var valeurInitiale = 0;
-    var sommeFraisFixes = arrayFraisFixes.reduce(function (accumulateur, valeurCourante) {
-      return accumulateur + Number(valeurCourante.montantFrais);
-    }, valeurInitiale);
-    var sommeFraisDivers = arrayFraisDivers.reduce(function (accumulateur, valeurCourante) {
-      return accumulateur + Number(valeurCourante.montantFrais);
-    }, valeurInitiale);
-    return (sommeFraisFixes + sommeFraisDivers)
-  }
+  // const totalChargesFixes = () => {
+  //   var valeurInitiale = 0;
+  //   var sommeFraisFixes = arrayFraisFixes.reduce(function (accumulateur, valeurCourante) {
+  //     return accumulateur + Number(valeurCourante.montantFrais);
+  //   }, valeurInitiale);
+  //   var sommeFraisDivers = arrayFraisDivers.reduce(function (accumulateur, valeurCourante) {
+  //     return accumulateur + Number(valeurCourante.montantFrais);
+  //   }, valeurInitiale);
+  //   return (sommeFraisFixes + sommeFraisDivers)
+  // }
 
   return (
     <div>
@@ -97,10 +97,10 @@ function Caracteristiques(props) {
             <div className="title">Reste à vivre /mois</div>
             <div className="montant"><span>{new Intl.NumberFormat().format(rav())}</span> €</div>
           </div>
-          <div className="categorieCaracteristiques">
+          {/* <div className="categorieCaracteristiques">
             <div className="info">Charges quotidiennes</div>
             <div className="infoMontant">{totalChargesFixes()} €</div>
-          </div>
+          </div> */}
           <div className="categorieCaracteristiques">
             <div className="title">Epargne restante</div>
             <div className="montant"> {props.epargne ? <span>{new Intl.NumberFormat().format(props.epargne - props.apport)}</span> : <span>0</span>} €</div>
