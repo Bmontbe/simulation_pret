@@ -9,12 +9,15 @@ function Charges(props) {
   })
   const [fraisFixes, setFraisFixes] = useState({ nomFrais: "", montantFrais: "" })
   const [arrayFraisFixes, setArrayFraisFixes] = useState([])
-  const [arrayFraisFixesLocalStorage, setArrayFraisFixesLocalStorage] = useState([])
+
   const [inputModifFraisFixes, setInputModifFraisFixes] = useState({ nomFrais: "", montantFrais: "" })
   const [fraisDivers, setFraisDivers] = useState({ nomFrais: "", montantFrais: "" })
   const [arrayFraisDivers, setArrayFraisDivers] = useState([])
-   const [arrayFraisDiversLocalStorage, setArrayFraisDiversLocalStorage] = useState([])
+
   const [inputModifFraisDivers, setInputModifFraisDivers] = useState({ nomFrais: "", montantFrais: "" })
+  const [arrayFraisFixesLocalStorage, setArrayFraisFixesLocalStorage] = useState([])
+  const [arrayFraisDiversLocalStorage, setArrayFraisDiversLocalStorage] = useState([])
+
 
   useEffect(() => {
     if (localStorage.getItem('arrayFraisFixes')) {
@@ -25,8 +28,8 @@ function Charges(props) {
           array[0].edit = true
         } return setArrayFraisFixesLocalStorage(array)
       }
-    } return arrayFraisFixes;
-  }, [props.newView])
+    } return arrayFraisFixesLocalStorage;
+  }, [])
 
   useEffect(() => {
     if (localStorage.getItem('arrayFraisDivers')) {
@@ -37,9 +40,8 @@ function Charges(props) {
           array[0].edit = true
         } return setArrayFraisDiversLocalStorage(array)
       }
-    } return arrayFraisDivers;
-  }, [props.newView])
-
+    } return arrayFraisDiversLocalStorage;
+  }, [])
 
   useEffect(() => {
     arrayFraisFixes != {} && localStorage.setItem("arrayFraisFixes", JSON.stringify(arrayFraisFixes));

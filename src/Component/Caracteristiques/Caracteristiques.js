@@ -11,13 +11,13 @@ function Caracteristiques(props) {
     if (localStorage.getItem('arrayFraisFixes')) {
      return setArrayFraisFixes(JSON.parse(localStorage.getItem('arrayFraisFixes')))
     } return arrayFraisFixes;
-  }, [])
+  }, [props.view])
 
   useEffect(() => {
     if (localStorage.getItem('arrayFraisDivers')) {
      return setArrayFraisDivers(JSON.parse(localStorage.getItem('arrayFraisDivers')))
     } return arrayFraisDivers;
-  }, [])
+  }, [props.view])
 
   const montantPret = (props.montantAcquisition + props.montantTravaux - props.apport - props.apportSup +
     props.fraisAgence + props.fraisNotaire + props.garantie + props.fraisDossier).toFixed(0)

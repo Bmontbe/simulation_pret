@@ -3,10 +3,13 @@ import './App.css';
 import Formulaire from './Component/Formulaire/Formulaire';
 import Charges from './Component/Charges/Charges';
 import NavigationBar from './Component/NavigationBar/NavigationBar';
+import { pretInfos } from './Component/Utils/pret';
 
 function App() {
   const [view, setView] = useState('Formulaire')
   const [newView, setNewView] = useState()
+ 
+
 
 useEffect(() => {
   setNewView(view)
@@ -25,8 +28,8 @@ useEffect(() => {
       />
       </div>
       <div>
-      { newView && newView === 'Formulaire' && <Formulaire view = {newView}/>}
-      { newView && newView === 'Charges' && <Charges view = {newView}/>}
+      { newView && newView === 'Formulaire' && <Formulaire view={newView} />}
+      { newView && newView === 'Charges' && <Charges/>}
       </div>
       
     </div>

@@ -13,8 +13,9 @@ function Formulaire(props) {
   useEffect(() => {
     if (localStorage.getItem('projet')) {
       return setProjetLocalStorage(JSON.parse(localStorage.getItem('projet')));
-    } return projet
-  }, [props.newView])
+    } return projetLocalStorage
+  }, [])
+
 
   useEffect(() => {
     projet != {} && localStorage.setItem("projet", JSON.stringify(projet))
@@ -287,6 +288,7 @@ function Formulaire(props) {
         assurancesMadame={Number(projet.assurancesMadame)}
         garantie={Number(projet.garantie)}
         fraisDossier={Number(projet.fraisDossier)}
+        view={props.view}
       />
     </div>
   );
